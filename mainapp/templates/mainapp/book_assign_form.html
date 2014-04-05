@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+{{ book.name }}
+<form action="#" method="post">
+{% csrf_token %}
+
+    <label for="due_date">Due Date:</label><input type="date" class="form-control" value="{{today}}" name="due_date">
+    <input  class="btn btn-default" type="submit" value="Submit" />
+</form>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>Availability</th>
+                <th>Assigned To</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {% for book in object_list %}
+                    <td>{{ book.name }}</td>
+                    <td>{{ book.author_name }}</td>
+                    <td>{{ book.is_available }}</td>
+                    <td>{{ book.assigned_to.get_full_name }}</td>
+                    <td>
+                        {% if book.is_available %}
+                            <a href="/books/{{ book.id }}/assign">Assign to me</a>
+                        {% elif book.assigned_to == user%}
+                            <a href="/books/{{ book.id }}/release">Return the book</a>
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
