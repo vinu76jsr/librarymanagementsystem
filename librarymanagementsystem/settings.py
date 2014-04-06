@@ -38,16 +38,17 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'social.apps.django_app.default',
     'django_extensions',
-    'crispy_forms',
-    'bootstrap3',
+    'djangosecure',
     'mainapp',
 )
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'social.backends.google.GoogleOpenId',
-      # 'django.contrib.auth.backends.ModelBackend',
 )
+
+SECURE_FRAME_DENY = True
+
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -56,7 +57,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'social.apps.django_app.middleware.SocialAuthExceptionMiddleware'
+    'social.apps.django_app.middleware.SocialAuthExceptionMiddleware',
+    "djangosecure.middleware.SecurityMiddleware"
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
