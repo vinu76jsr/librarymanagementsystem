@@ -46,8 +46,9 @@ class Book(models.Model):
         return not bool(self.assigned_to)
 
     def return_book(self, user):
+        assert user == self.assigned_to
         self.assigned_to = None
-        self.assigned_on = False
+        self.assigned_on = None
         self.save()
 
 
