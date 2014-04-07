@@ -5,4 +5,7 @@ python:
 install:
   - "pip install -r requirements.txt"
 # command to run tests
-script: python manage.py test mainapp
+script:
+  - python manage.py test mainapp
+after_success:
+  - coveralls

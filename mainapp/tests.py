@@ -1,4 +1,4 @@
-import unittest
+from django.utils import unittest
 from django.contrib.auth.models import User
 from datetime import date
 
