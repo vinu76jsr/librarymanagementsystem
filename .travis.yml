@@ -7,8 +7,9 @@ install:
 # command to run tests
 script:
   - python manage.py test mainapp
+  - coverage run --source=main manage.py test mainapp
 env:
-  - COVERALLS_REPO_TOKEN=abcdef1234569abdcef
+  - COVERALLS_REPO_TOKEN=qiz2yB41KjYBxJacVhU4WIbeIIkFUMj6G
  
 after_success:
   - coveralls
