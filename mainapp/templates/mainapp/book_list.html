@@ -12,8 +12,9 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                {% for book in object_list %}
+
+            {% for book in object_list %}
+                <tr>
                     <td>{{ book.name }}</td>
                     <td>{{ book.author_name }}</td>
                     <td>{{ book.is_available }}</td>
@@ -25,8 +26,9 @@
                             <a href="/books/{{ book.id }}/release">Return the book</a>
                         {% endif %}
                     </td>
-                {% endfor %}
-            </tr>
+                </tr>
+            {% endfor %}
+
         </tbody>
     </table>
 {% endblock %}
