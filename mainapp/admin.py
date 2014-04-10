@@ -5,8 +5,7 @@ from mainapp.models import Book, Author, RequestBook
 
 
 class BookAdmin(admin.ModelAdmin):
-
-    fields = ['author', 'name']
+    pass
 
 class AuthorAdmin(admin.ModelAdmin):
     pass
