@@ -31,7 +31,7 @@ class Book(models.Model):
     def assigned_to_user(self, user, due_on):
         self.assigned_to = user
         self.assigned_on = datetime.now()
-        self.due_on = self.due_on
+        self.due_on = due_on
         self.save()
 
     def author_name(self):
