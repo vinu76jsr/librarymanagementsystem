@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include, url
 
 from django.contrib import admin
-from mainapp.views import BookListView, BookAssignView
+from mainapp.views import BookListView, BookAssignView, BookRelease
 from django.contrib.auth.decorators import login_required
 
 admin.autodiscover()
@@ -20,7 +20,7 @@ urlpatterns = patterns('',
     url(r'^books/$', login_required(BookListView.as_view()), name='book-list'),
     # url(r'^books/(?P<book_id>\d+)/assign$', 'mainapp.views.book_assign', name='book-assign'),
     url(r'^books/(?P<book_id>\d+)/assign$', login_required(BookAssignView.as_view()), name='book-assign'),
-    url(r'^books/(?P<book_id>\d+)/release', login_required(BookAssignView.as_view()), name='book-release'),
+    url(r'^books/(?P<book_id>\d+)/release', login_required(BookReleaseView.as_view()), name='book-release'),
 
 
 )

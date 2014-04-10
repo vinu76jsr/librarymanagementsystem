@@ -82,7 +82,7 @@ class BookAssignView(View):
         return HttpResponseRedirect(redirect_url, {'message': message})
 
 
-class BookRelease(View):
+class BookReleaseView(View):
 
     template_name = 'mainapp/book_release_form.html'
 
