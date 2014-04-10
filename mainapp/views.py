@@ -86,7 +86,7 @@ class BookReleaseView(View):
 
     template_name = 'mainapp/book_release_form.html'
 
-    def post(self, request, *args, **kwargs):
+    def get(self, request, *args, **kwargs):
         try:
             book = Book.objects.get(id=kwargs['book_id'])
         except Book.DoesNotExist():
