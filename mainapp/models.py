@@ -15,7 +15,7 @@ class Author(models.Model):
 
 class Book(models.Model):
     assigned_to = models.ForeignKey(User, blank=True, null=True, related_name='assigned_to_user')
-    owned_by = models.ForeignKey(User, null=True, related_name='owned_by_user')
+    owned_by = models.ForeignKey(User, null=True, blank=True, related_name='owned_by_user')
     name = models.CharField(max_length=400)
     author = models.CharField(max_length=400)
     author_model = models.ManyToManyField(Author, null=True, blank=True)
