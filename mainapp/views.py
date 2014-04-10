@@ -93,8 +93,9 @@ class BookReleaseView(View):
             messages.error(request, 'Specified book does not exist')
             return HttpResponseRedirect('/')
         redirect_url = '/books'
+
         if book.assigned_to is request.user:
             message = messages.success(request, 'Book is Released from you')
         else:
-            message = messages.error(request, 'Book is not assigned to you')
+            message = messages.error(request, 'Book is not assigned to you %s %s' % (request.user, book.assigned_to))
         return HttpResponseRedirect(redirect_url, {'message': message})
