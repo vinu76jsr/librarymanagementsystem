@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include, url
 
 from django.contrib import admin
-from mainapp.views import BookListView, BookAssignView, BookRelease
+from mainapp.views import BookListView, BookAssignView, BookReleaseView
 from django.contrib.auth.decorators import login_required
 
 admin.autodiscover()
