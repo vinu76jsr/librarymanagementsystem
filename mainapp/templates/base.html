@@ -2,26 +2,17 @@
 <html>
 <head>
 
-    <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="/static/css/datepicker.css">
-<!-- Latest compiled and minified JavaScript -->
+<link rel="stylesheet" href="//cdn.datatables.net/1.9.4/css/jquery.dataTables.css">
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<script src="/static/js/bootstrap-datepicker.js"></script>
+<script src="//cdn.datatables.net/1.9.4/js/jquery.dataTables.js"></script>
 
-    <title></title>
+
 <script>
-$(document).ready(function(){
-
-});
+    $(document).ready(function() {
+        $('#book_list').dataTable();
+    });
 </script>
-<style>
-</style>
 </head>
 <body>
 {% if messages %}
