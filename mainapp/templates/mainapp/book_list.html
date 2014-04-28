@@ -17,7 +17,11 @@
                 <tr>
                     <td>{{ book.name }}</td>
                     <td>{{ book.author_name }}</td>
-                    <td>{{ book.is_available }}</td>
+                    {% if book.is_available %}
+						<td><center><img src='/static/images/tick.png'></center></td>
+					{% else %}
+						<td><center><img src='/static/images/no.png'></center></td>
+					{% endif %}
                     <td>{{ book.assigned_to.get_full_name }}</td>
                     <td>
                         {% if book.is_available %}
